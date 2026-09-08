@@ -86,7 +86,7 @@
 .success-check-badge {
   display: inline-flex;
   align-items: left;
-  justify-content: left;
+  justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
