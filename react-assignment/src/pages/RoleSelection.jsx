@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/RoleSelection.css';
 
-function RoleSelection() {
+function RoleSelection({setUserRole}) {
   const [selectedRole, setSelectedRole] = useState('');
   const navigate = useNavigate();
 
@@ -12,15 +12,20 @@ function RoleSelection() {
 
   const handleContinue = () => {
     if (selectedRole) {
-      // Save role choice locally so sign-up & login know where to redirect
+      if (setUserRole) {
+        setUserRole(selectedRole);
+      }
+      
+      
       localStorage.setItem('userRole', selectedRole);
+      
+      
       navigate('/signup');
     }
   };
 
   return (
     <div className="split-container">
-      {/* Left side brand banner */}
       <div className="left-banner">
         <div className="brand-logo">
           <span className="logo-small">The</span>
@@ -28,13 +33,11 @@ function RoleSelection() {
         </div>
       </div>
 
-      {/* Right side role selection */}
       <div className="right-content">
         <h1 className="role-title">Welcome to The Edge</h1>
         <p className="role-subtitle">Select your role to get started</p>
 
         <div className="cards-container">
-          {/* Tutor Card */}
           <div
             className={`role-card ${selectedRole === 'tutor' ? 'selected' : ''}`}
             onClick={() => handleSelectRole('tutor')}
@@ -48,7 +51,6 @@ function RoleSelection() {
             </ul>
           </div>
 
-          {/* Student Card */}
           <div
             className={`role-card ${selectedRole === 'student' ? 'selected' : ''}`}
             onClick={() => handleSelectRole('student')}
