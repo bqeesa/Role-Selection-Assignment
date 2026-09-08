@@ -12,28 +12,26 @@ import TutorDashboard from './pages/TutorDashboard';
 import TutorStudents from './pages/TutorStudents';
 import TutorClasses from './pages/TutorClasses';
 import Resources from './pages/Resources';
-import Settings from './pages/Settings'
+import Settings from './pages/Settings';
 import LandingPage from './pages/LandingPage';
 import ShopPage from './pages/ShopPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ArticlePage from './pages/ArticlePage';
 import AboutPage from './pages/AboutPage';
 
-
 function App() {
-  const [userRole, setUserRole] = useState(null); // 'student' or 'tutor'
+  const [userRole, setUserRole] = useState(() => localStorage.getItem('userRole'));
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-      <Router>
-        <Routes>
-        /* ONLY Public Route */
+    <Router>
+      <Routes>
         <Route path="/" element={<RoleSelection setUserRole={setUserRole} />} />
 
-        /* Auth Routes: Unlocked after Role Selection */
         <Route 
           element={
             <ProtectedRoute 
-              isAllowed={userRole !== null} 
+              isAllowed={Boolean(userRole)} 
               redirectPath="/" 
             />
           }
@@ -43,7 +41,6 @@ function App() {
           <Route path="/login" element={<Login userRole={userRole} setIsAuthenticated={setIsAuthenticated} />} />
         </Route>
 
-        /* Student Flow: Unlocked only if userRole === 'student' and authenticated */
         <Route 
           element={
             <ProtectedRoute 
@@ -60,7 +57,6 @@ function App() {
           <Route path="/student/resources" element={<Resources />} />
         </Route>
 
-        /* Tutor Flow: Unlocked only if userRole === 'tutor' and authenticated */
         <Route 
           element={
             <ProtectedRoute 
@@ -78,11 +74,7 @@ function App() {
           <Route path="/tutor/settings" element={<Settings />} />
         </Route>
       </Routes>
-         
-
-        
-      </Router>
-    
+    </Router>
   );
 }
 
