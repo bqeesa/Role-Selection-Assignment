@@ -1,0 +1,205 @@
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.signup-form-box {
+  width: 100%;
+  max-width: 440px;
+}
+
+.signup-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.signup-subtitle {
+  font-size: 13px;
+  color: rgba(180, 180, 200, 1);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* Two-column layout for name and password inputs */
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(253, 251, 243, 1);
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  outline: none;
+}
+
+/* Custom Phone Field Container using Flexbox without gap */
+.phone-input-container {
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: rgba(253, 251, 243, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.country-select {
+  border: none;
+  background-color: transparent;
+  padding: 0 8px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+  cursor: pointer;
+  border-right: 1px solid rgba(200, 200, 200, 1);
+}
+
+.phone-input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  padding: 0 12px;
+  height: 42px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+}
+
+/* Password wrapper for toggle icon */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-input-wrapper-two {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrapper-two .input-field {
+  width: 100%;
+  padding-right: 50px; /* Space so text doesn't overlap button */
+  box-sizing: border-box;
+}
+
+.toggle-pwd-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  color: rgba(100, 100, 100, 1);
+  font-size: 12px;
+}
+.toggle-pwd-btn-two {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the button vertically in the box */
+  background: transparent;
+  border: none;
+  color: rgba(100, 100, 100, 1);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Checkbox container */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.checkbox-group input {
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 44px;
+  background-color: rgba(212, 165, 82, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(180, 180, 200, 1);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+.google-btn {
+  width: 100%;
+  height: 44px;
+  background-color: rgba(253, 251, 243, 1);
+  color: rgba(0, 0, 0, 1);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-icon {
+  font-weight: bold;
+  color: rgba(66, 133, 244, 1);
+}

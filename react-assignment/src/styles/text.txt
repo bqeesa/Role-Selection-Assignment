@@ -1,0 +1,17 @@
+<Route path="/" element={<RoleSelection />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/verify" element={<Verification />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/tutor-onboarding/docs" element={<TutorOnboardingDocs />} />
+        <Route path="/tutor-onboarding/availability" element={<TutorOnboardingAvailability />} />
+        <Route path="/tutor/dashboard" element={<TutorDashboard />} />
+        <Route path="/tutor/students" element={<TutorStudents />} />
+        <Route path="/tutor/classes" element={<TutorClasses />} />
+        <Route path="/tutor/resources" element={<Resources />} />
+        <Route path="/student/resources" element={<Resources />} />
+        <Route path="/tutor/settings" element={<Settings />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/product" element={<ProductDetailPage />} />
+        <Route path="/article" element={<ArticlePage />} />
+        <Route path="/about" element={<AboutPage />} />

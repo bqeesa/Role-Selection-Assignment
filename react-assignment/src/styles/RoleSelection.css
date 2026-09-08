@@ -1,0 +1,122 @@
+.split-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left side of split screen */
+.left-banner {
+  flex: 1;
+  background-color: rgba(18, 12, 38, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logo {
+  font-size: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+}
+
+.logo-small {
+  font-size: 28px;
+  font-weight: 300;
+  display: block;
+}
+
+.logo-large {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+}
+
+/* Right side of split screen */
+.right-content {
+  flex: 1;
+  background-color: rgba(22, 16, 46, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.role-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 8px;
+}
+
+.role-subtitle {
+  font-size: 14px;
+  color: rgba(180, 180, 200, 1);
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Role Card Component */
+.role-card {
+  background-color: rgba(245, 240, 228, 1);
+  width: 180px;
+  padding: 24px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.role-card.selected {
+  border-color: rgba(212, 165, 82, 1);
+}
+
+.circle-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(180, 140, 70, 1);
+  margin-bottom: 16px;
+}
+
+.role-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 12px;
+}
+
+.role-list {
+  list-style: none;
+}
+
+.role-list li {
+  font-size: 11px;
+  color: rgba(80, 80, 80, 1);
+  margin-bottom: 4px;
+}
+
+.continue-btn {
+  width: 180px;
+  padding: 12px;
+  background-color: rgba(212, 165, 82, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.continue-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

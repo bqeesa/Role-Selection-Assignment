@@ -1,0 +1,162 @@
+.onboarding-container {
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 40px 180px;
+  color: rgba(30, 30, 30, 1);
+}
+
+/* Stepper Progress Bar */
+.stepper-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.step-item {
+  text-align: left;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(215, 215, 215, 1);
+  margin-bottom: 8px;
+}
+
+.step-num {
+  font-size: 10px;
+  color: rgba(140, 140, 140, 1);
+  text-transform: uppercase;
+  display: block;
+}
+
+.step-label {
+  font-size: 12px;
+  color: rgba(30, 30, 30, 1);
+  font-weight: 700;
+}
+
+.step-divider {
+  flex: 1;
+  height: 4px;
+  background-color: rgba(220, 220, 220, 1);
+  margin: 0 16px;
+  border-radius: 2px;
+}
+
+/* Onboarding Header */
+.onboarding-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.onboarding-subtitle {
+  font-size: 12px;
+  color: rgba(120, 120, 120, 1);
+  margin-bottom: 32px;
+}
+
+/* Document Upload Cards */
+.upload-card {
+  background-color: rgba(215, 215, 215, 1);
+  padding: 20px 24px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.upload-card-title {
+  font-size: 14px;
+  color: rgba(30, 30, 30, 1);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.upload-card-hint {
+  font-size: 11px;
+  color: rgba(90, 90, 90, 1);
+  margin-bottom: 16px;
+}
+
+.file-selected-name {
+  display: block;
+  font-size: 12px;
+  color: rgba(40, 138, 59, 1);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  background-color: rgba(240, 160, 160, 1);
+  color: rgba(30, 30, 30, 1);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  background-color: rgba(230, 140, 140, 1);
+}
+
+/* Teaching Mode Selectors */
+.mode-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.mode-btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(215, 215, 215, 1);
+  color: rgba(30, 30, 30, 1);
+}
+
+.mode-btn.active {
+  background-color: rgba(240, 160, 160, 1);
+}
+
+.availability-textarea {
+  width: 450px;
+  height: 140px;
+  background-color: rgba(215, 215, 215, 1);
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+}
+
+/* Navigation Actions */
+.onboarding-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.nav-btn {
+  background-color: rgba(220, 220, 220, 1);
+  color: rgba(30, 30, 30, 1);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: rgba(200, 200, 200, 1);
+}
