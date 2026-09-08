@@ -21,13 +21,27 @@ import AboutPage from './pages/AboutPage';
 
 function App() {
   const [userRole, setUserRole] = useState(() => localStorage.getItem('userRole'));
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  // Safely initialize isAuthenticated state from localStorage
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem('isAuthenticated') === 'true';
+  });
+
+  const handleAuthSuccess = (role) => {
+    if (role) {
+      setUserRole(role);
+      localStorage.setItem('userRole', role);
+    }
+    setIsAuthenticated(true);
+    localStorage.setItem('isAuthenticated', 'true');
+  };
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<RoleSelection setUserRole={setUserRole} />} />
 
+        {/* Auth Routes */}
         <Route 
           element={
             <ProtectedRoute 
@@ -36,11 +50,30 @@ function App() {
             />
           }
         >
-          <Route path="/signup" element={<SignUp userRole={userRole} />} />
+          <Route 
+            path="/signup" 
+            element={
+              <SignUp 
+                userRole={userRole} 
+                setIsAuthenticated={setIsAuthenticated} 
+                handleAuthSuccess={handleAuthSuccess} 
+              />
+            } 
+          />
           <Route path="/verify" element={<Verification />} />
-          <Route path="/login" element={<Login userRole={userRole} setIsAuthenticated={setIsAuthenticated} />} />
+          <Route 
+            path="/login" 
+            element={
+              <Login 
+                userRole={userRole} 
+                setIsAuthenticated={setIsAuthenticated} 
+                handleAuthSuccess={handleAuthSuccess} 
+              />
+            } 
+          />
         </Route>
 
+        {/* Student Flow */}
         <Route 
           element={
             <ProtectedRoute 
@@ -57,6 +90,7 @@ function App() {
           <Route path="/student/resources" element={<Resources />} />
         </Route>
 
+        {/* Tutor Flow */}
         <Route 
           element={
             <ProtectedRoute 

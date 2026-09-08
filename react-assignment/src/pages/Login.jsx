@@ -1,9 +1,9 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/SignUp.css';
 import '../styles/Login.css';
 
-function Login() {
+function Login({ setIsAuthenticated, handleAuthSuccess }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -25,9 +25,17 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid) {
-      // Check saved user role from step 1
       const role = localStorage.getItem('userRole') || 'student';
       
+      // Update global auth state and persist to localStorage
+      if (handleAuthSuccess) {
+        handleAuthSuccess(role);
+      } else if (setIsAuthenticated) {
+        setIsAuthenticated(true);
+        localStorage.setItem('isAuthenticated', 'true');
+      }
+
+      // Route according to user role
       if (role === 'tutor') {
         navigate('/tutor-onboarding/docs');
       } else {
@@ -66,24 +74,24 @@ function Login() {
             </div>
 
             <div className="form-group">
-                <label>Password</label>
-                <div className="password-input-wrapper-two">
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    name="password"
-                    className="input-field"
-                    value={formData.password}
-                    onChange={handleChange}
-                  />
-                  <button
-                    type="button"
-                    className="toggle-pwd-btn-two"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? 'Hide' : 'Show'}
-                  </button>
-                </div>
+              <label>Password</label>
+              <div className="password-input-wrapper-two">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  name="password"
+                  className="input-field"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <button
+                  type="button"
+                  className="toggle-pwd-btn-two"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? 'Hide' : 'Show'}
+                </button>
               </div>
+            </div>
 
             <div className="forgot-pwd-container">
               <span>Forgot Password?</span>
